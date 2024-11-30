@@ -19,4 +19,6 @@ curl -o "$RUNNER_ARCH" -L "$RUNNER_URL"
 echo "$sha256  $RUNNER_ARCH" | sha256sum --strict --check -
 tar xzf "$RUNNER_ARCH"
 
+./bin/installdependencies.sh
+
 apt-get purge -y --auto-remove

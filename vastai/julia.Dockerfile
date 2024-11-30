@@ -25,7 +25,7 @@ RUN mkdir -m 0777 /depot
 ENV JULIA_DEPOT_PATH=/depot:/usr/local/share/julia
 
 
-WORKDIR /opt/actions-runner
+WORKDIR /root
 
 ADD ./download_gha.sh .
 RUN bash ./download_gha.sh
