@@ -31,4 +31,4 @@ jobs:
           CUDA_VERSION=12.2
         file: ./vastai/julia.Dockerfile
         push: true
-        tags: ${{ github.repository_owner }}/gpu-runners-julia:vastai-cuda12.2
+        tags: ghcr.io/${{ github.repository_owner }}/gpu-runners-julia:vastai-cuda12.2
