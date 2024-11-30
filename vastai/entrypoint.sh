@@ -1,6 +1,7 @@
 #! /bin/bash
 
-pip install vastai
+sudo pip install vastai
+vastai --help
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
 
 EXTRA_LABELS="vastai"
@@ -10,7 +11,10 @@ if [ -z "$CONTAINER_ID" ]; then
 fi
 if [ ! -f ~/.vast_api_key ]; then
   echo "~/.vast_api_key not found, regenerating"
-  cat ~/.ssh/authorized_keys | md5sum | awk '{print $1}' > ssh_key_hv; echo -n $VAST_CONTAINERLABEL | md5sum | awk '{print $1}' > instance_id_hv; head -c -1 -q ssh_key_hv instance_id_hv > ~/.vast_api_key;
+  echo "$CONTAINER_API_KEY" > ~/.vast_api_key
+fi
+if [ -z "$CONTAINER_API_KEY"] then
+  echo "CONTAINER_API_KEY not defined"
 fi
 
 if [ -n "$CONTAINER_ID" ]; then
