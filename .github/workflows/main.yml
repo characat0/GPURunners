@@ -1,0 +1,14 @@
+name: Train on Vast AI
+
+on:
+  workflow_dispatch:
+jobs:
+  train:
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare (Download data and instantiate Julia)
+        run: |
+          julia -e 'import Pkg; Pkg.test("CUDA")'
+          echo "Successfully tested CUDA"
