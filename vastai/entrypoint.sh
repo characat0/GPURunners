@@ -3,7 +3,8 @@
 set -e 
 set -o pipefail
 
-pipx install vastai
+pipx ensurepath
+pipx install vastai --force
 vastai --help
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
 
