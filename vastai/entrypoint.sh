@@ -3,8 +3,7 @@
 set -e 
 set -o pipefail
 
-echo $HOME
-chown -R xf /root/.cache/pip
+chown -R /root/.cache/pip
 pip install vastai
 vastai --help
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
