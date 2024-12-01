@@ -12,7 +12,7 @@ sha256="93ac1b7ce743ee85b5d386f5c1787385ef07b3d7c728ff66ce0d3813d5f46900"
 # Update and install dependencies
 echo "Updating system and installing dependencies..."
 apt-get update
-apt-get install -y --no-install-recommends curl tar wget coreutils git tree python3-pip
+apt-get install -y --no-install-recommends curl tar wget coreutils git tree python3-pip pipx
 rm -rf /var/lib/apt/lists/*
 
 # Download the runner package
