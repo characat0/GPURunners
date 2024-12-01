@@ -1,6 +1,8 @@
 #! /bin/bash
 
-sudo pip install vastai
+echo $HOME
+chown -R xf /root/.cache/pip
+pip install vastai
 vastai --help
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
 
@@ -13,7 +15,7 @@ if [ ! -f ~/.vast_api_key ]; then
   echo "~/.vast_api_key not found, regenerating"
   echo "$CONTAINER_API_KEY" > ~/.vast_api_key
 fi
-if [ -z "$CONTAINER_API_KEY"] then
+if [ -z "$CONTAINER_API_KEY"]; then
   echo "CONTAINER_API_KEY not defined"
 fi
 
