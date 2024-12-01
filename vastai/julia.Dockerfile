@@ -24,6 +24,7 @@ RUN julia -e 'using CUDA; CUDA.precompile_runtime()'
 RUN mkdir -m 0777 /depot
 ENV JULIA_DEPOT_PATH=/depot:/usr/local/share/julia
 
+WORKDIR /opt/runner
 
 ADD ./download_gha.sh .
 RUN bash ./download_gha.sh

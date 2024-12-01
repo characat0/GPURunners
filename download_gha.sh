@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e 
+set -o pipefail
+
 # Define variables
 RUNNER_VERSION="2.320.0"
 RUNNER_ARCH="actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz"

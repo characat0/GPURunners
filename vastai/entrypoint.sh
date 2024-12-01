@@ -1,5 +1,8 @@
 #! /bin/bash
 
+set -e 
+set -o pipefail
+
 echo $HOME
 chown -R xf /root/.cache/pip
 pip install vastai
@@ -18,7 +21,6 @@ fi
 if [ -z "$CONTAINER_API_KEY"]; then
   echo "CONTAINER_API_KEY not defined"
 fi
-
 if [ -n "$CONTAINER_ID" ]; then
   EXTRA_LABELS="${EXTRA_LABELS},${CONTAINER_ID}"
 fi
