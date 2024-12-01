@@ -4,6 +4,7 @@ set -e
 set -o pipefail
 
 pipx ensurepath
+source ~/.bashrc
 pipx install vastai --force
 vastai --help
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
