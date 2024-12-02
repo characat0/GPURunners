@@ -5,7 +5,7 @@ on:
 jobs:
   train:
     runs-on: [self-hosted, gpu]
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Prepare (Download data and instantiate Julia)
