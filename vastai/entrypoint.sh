@@ -17,7 +17,7 @@ if [ ! -f ~/.vast_api_key ]; then
   echo "~/.vast_api_key not found, regenerating"
   echo "$CONTAINER_API_KEY" > ~/.vast_api_key
 fi
-if [ -z "$CONTAINER_API_KEY"]; then
+if [ -z "$CONTAINER_API_KEY" ]; then
   echo "CONTAINER_API_KEY not defined"
 fi
 if [ -n "$CONTAINER_ID" ]; then
