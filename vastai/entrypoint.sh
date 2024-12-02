@@ -5,11 +5,10 @@ set -o pipefail
 
 pipx ensurepath
 source ~/.bashrc
-pipx install vastai --force
-vastai --help
+pipx install vastai
 trap 'vastai destroy instance $CONTAINER_ID' EXIT
 
-EXTRA_LABELS="vastai"
+export EXTRA_LABELS="vastai"
 
 if [ -z "$CONTAINER_ID" ]; then
   echo "CONTAINER_ID not defined"
